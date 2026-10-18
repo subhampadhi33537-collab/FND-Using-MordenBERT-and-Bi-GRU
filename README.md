@@ -238,23 +238,6 @@ Open `main.ipynb` to execute:
 
 
 ---
-
-## 📜 Citation & Attribution
-
-If you utilize this architecture, preprocessing methodology, or benchmark evaluation in your research, please cite:
-
-```bibtex
-@article{padhi2026modernbertbigru,
-  title   = {Fake News Detection via ModernBERT Representations and Bidirectional Gated Recurrent Units with Dual Masked Pooling},
-  author  = {Padhi, Subham and Collaborators},
-  journal = {AI Research Project Repository},
-  year    = {2026},
-  url     = {https://github.com/subhampadhi33537-collab/FND-Using-MordenBERT-Bi-GRU}
-}
-```
+``
 
 ---
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
