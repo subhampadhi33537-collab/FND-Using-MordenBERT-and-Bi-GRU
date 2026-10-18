@@ -149,17 +149,7 @@ The ISOT dataset is widely recognized in fake news detection literature, but nai
 
 ## 📊 Experimental Results
 
-### 1. In-Domain 5-Fold Stratified Cross-Validation on ISOT (Table 1)
-Evaluated across all 5 folds using stratified splits on the cleaned ISOT corpus:
-
-| Model Architecture | Accuracy (%) | Precision (%) | Recall (%) | F1-Score (%) | ROC-AUC (%) |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| TF-IDF + Naive Bayes | $95.89 \pm 0.29$ | $95.90 \pm 0.29$ | $95.89 \pm 0.29$ | $95.89 \pm 0.29$ | $99.10 \pm 0.09$ |
-| TF-IDF + Logistic Regression | $99.27 \pm 0.14$ | $99.27 \pm 0.14$ | $99.27 \pm 0.14$ | $99.27 \pm 0.14$ | $99.94 \pm 0.02$ |
-| TF-IDF + Linear SVM | $99.42 \pm 0.11$ | $99.42 \pm 0.11$ | $99.42 \pm 0.11$ | $99.42 \pm 0.12$ | $99.97 \pm 0.01$ |
-| **ModernBERT + Bi-GRU (Proposed)** | **$100.00 \pm 0.01$** | **$100.00 \pm 0.01$** | **$100.00 \pm 0.01$** | **$100.00 \pm 0.01$** | **$100.00 \pm 0.00$** |
-
-### 2. ISOT Holdout Test Set Performance (n = 3,909)
+### 1. ISOT Holdout Test Set Performance (n = 3,909)
 Evaluated using the optimal checkpoint on the unseen $10\%$ stratified holdout partition:
 
 ```
@@ -174,19 +164,7 @@ weighted avg     0.9997    0.9997    0.9997      3909
 Test Accuracy: 99.97% | ROC-AUC: 1.0000
 ```
 
-### 3. Out-of-Distribution (OOD) Domain Generalizability (Table 2)
-To examine vulnerability to distribution shift, models trained exclusively on ISOT were deployed **zero-shot** on the completely independent **McIntire Dataset** (`fake_or_real_news.csv`, $n=6,298$) without fine-tuning:
-
-| Model | ISOT Acc (%) | ISOT F1 (%) | McIntire Acc (%) | McIntire Precision (%) | McIntire Recall (%) | McIntire F1 (%) | McIntire AUC (%) | F1 Drop (pts) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **ModernBERT + Bi-GRU (Proposed)** | **$99.97$** | **$99.97$** | **$75.04$** | **$75.62$** | **$75.04$** | **$74.90$** | **$82.72$** | **$25.07$** |
-| TF-IDF + Logistic Regression | $99.44$ | $99.44$ | $60.19$ | $66.07$ | $60.19$ | $56.22$ | $73.30$ | $43.21$ |
-| TF-IDF + Linear SVM | $99.39$ | $99.39$ | $58.37$ | $64.01$ | $58.37$ | $53.75$ | $71.48$ | $45.63$ |
-| TF-IDF + Naive Bayes | $96.21$ | $96.21$ | $56.54$ | $58.56$ | $56.54$ | $53.87$ | $58.85$ | $42.34$ |
-
-> **Key Observation**: While classical linear models collapse to near-random prediction ($53\%$–$56\%$ F1, dropping over $42$ points), ModernBERT-Bi-GRU preserves structural linguistic comprehension ($74.90\%$ F1, $82.72\%$ AUC), cutting the domain performance drop by nearly half.
-
-### 4. 5-Fold Stratified Cross-Validation on McIntire From Scratch (Table 3)
+### 2. 5-Fold Stratified Cross-Validation on McIntire From Scratch (Table 3)
 When trained directly on the McIntire dataset, ModernBERT-Bi-GRU achieves state-of-the-art in-domain performance:
 
 | Metric | ISOT (mean ± std) | McIntire (mean ± std) | Difference (ISOT - McIntire) |
@@ -257,7 +235,7 @@ Open `main.ipynb` to execute:
 2. Model definition with dynamic sequence packing.
 3. Training with AdamW, differential learning rates, and AMP.
 4. Validation, checkpointing, and confusion matrix generation.
-5. In-domain baseline comparisons and OOD transfer evaluation.
+
 
 ---
 
