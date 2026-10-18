@@ -1,0 +1,96 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C/C++ extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints & autosaves
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Model weights & large checkpoint files
+*.pt
+*.pth
+*.pwf
+*.bin
+*.h5
+*.hdf5
+*.ckpt
+*.safetensors
+*.onnx
+checkpoints/
+models/
+
+# Large datasets & raw data archives
+Fake.csv
+True.csv
+fake_or_real_news.csv
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+data/
+datasets/
+
+# Experiment tracking & logs
+wandb/
+runs/
+lightning_logs/
+*.log
+tensorboard/
+
+# Hugging Face & PyTorch caches
+.cache/
+hf_cache/
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# IDEs & code editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini

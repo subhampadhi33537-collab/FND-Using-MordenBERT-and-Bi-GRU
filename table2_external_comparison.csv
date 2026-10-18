@@ -1,0 +1,5 @@
+Model,ISOT Acc (%),ISOT F1 (%),McIntire Acc (%),McIntire Precision (%),McIntire Recall (%),McIntire F1 (%),McIntire Macro-F1 (%),McIntire AUC (%),F1 drop (pts)
+ModernBERT + Bi-GRU (proposed),99.97,99.97,75.04,75.62,75.04,74.9,74.9,82.72,25.07
+TF-IDF + Logistic Regression,99.44,99.44,60.19,66.07,60.19,56.22,56.24,73.3,43.21
+TF-IDF + Linear SVM,99.39,99.39,58.37,64.01,58.37,53.75,53.77,71.48,45.63
+TF-IDF + Naive Bayes,96.21,96.21,56.54,58.56,56.54,53.87,53.89,58.85,42.34
